@@ -34,6 +34,8 @@ EXTRA_OECONF_PATHS = "\
     --with-build-sysroot=${STAGING_DIR_TARGET} \
 "
 
+EXTRA_OECONF_GCC_FLOAT = "${@get_gcc_float_setting(bb, d)}"
+
 ARCH_FLAGS_FOR_TARGET += "-isystem${STAGING_DIR_TARGET}${target_includedir}"
 
 do_compile () {
